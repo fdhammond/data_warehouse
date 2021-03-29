@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+.navbar-brand a {
+  color: white;
+}
+
+.login-container {
+  margin-top: 12%;
+}
+
+.nav .nav-item a {
+  color: white;
+}
+
+.form-container {
+  width: 100%;
+  margin: auto;
+}
+
+.form-container .search-container {
+  width: 100%;
+  margin: 0;
+}
+
+.form-container .container-buttons button {
+  border-color: #E8E8E8;
+}
+
+.form-container .container-buttons i {
+  color: #1D72C2;
+}
+
+.image-upload i {
+  font-size: 35px;
+}
+
+.image-upload #file-input {
+  display: none;
+}
+
+.table-container {
+  margin-top: 155px;
+}
+/*# sourceMappingURL=style.css.map */

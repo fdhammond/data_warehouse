@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+// Variables
+$dark-blue: #1D72C2;
+$medium-blue: #0683F9;
+$light-blue: #8EC7FC;
+$green: #429C41;
+$dark-red: #BB3E3F;
+$red: #DE0028;
+$orange: #FF6F00;
+$yellow: #FFC700;
+$cian: #1CC1F5;
+$silver: #E8E8E8;
+$white: #ffffff;
+$black: #000000;
+
+$font: 'Open Sans', sans-serif;
+
+* {
+    box-sizing: border-box;
+    font-family: $font;
+}
+
+.navbar-brand {
+    a {
+        color: white;
+    }
+}
+
+.login-container {
+    margin-top: 12%;
+}
+
+
+.nav {
+
+    .nav-item {
+        a {
+            color: white;
+        }
+    }
+}
+
+ 
+// Form
+.form-container {
+    width: 100%;
+    margin: auto;
+
+    .search-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .container-buttons {
+        button {
+            border-color: $silver;
+        }
+            i {
+                color: $dark-blue;
+            }        
+    }
+}
+
+.image-upload {
+    
+    i {
+        font-size: 35px;
+    }
+    
+    #file-input {
+        display: none;
+    }
+}
+
+.table-container {
+    margin-top: 155px;
+}
+

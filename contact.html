@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css">
+    <title>Data Warehouse</title>
+</head>
+<body>
+    
+      <!-- Nav -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container justify-content-start ml-auto">
+            <a class="navbar-brand" href="index.html">Logo</a>
+        </div>
+
+        <div class="container justify-content-end ml-auto">   
+            <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html">Contactos</a>
+            </li>                
+            <li class="nav-item">
+                <a class="nav-link " href="#">Compañias</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#">Usuarios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#">Región / Ciudad</a>
+            </li>
+        </ul>
+        </div>
+      </nav>
+
+      <!-- Nav -->
+
+      <!-- Search -->
+
+            <div class="form-container m-4">            
+            <form>
+                <h4 class="heading m-3">Contactos</h4>
+                <div class="container-fluid">
+                <div class="row">                    
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="First name">
+                  </div>
+                  <div class="col">
+                    <div class="container-buttons">
+                        <button class="btn btn-search" type="button">                          
+                            <i class="fa fa-search"></i>
+                          </button>                                                  
+                    </div>  
+                  </div>
+                  <div class="col">                      
+                          <button class="btn btn-secondary" type="button">
+                              <i class="fa fa-upload"></i>
+                            </button>                        
+                              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Exportar Contactos
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                              </div>          
+                              <button type="button" class="btn btn-secondary">Agregar Contacto</button>                                  
+                  </div>
+                </div>
+            </div>
+              </form>
+            </div>
+     
+            <!-- table 
+            data-search-align="left"
+              data-show-refresh="true"
+              data-show-pagination-switch="true"
+              data-pagination-pre-text="Previous"
+              data-pagination-next-text="Next"
+              data-pagination-h-align="left"
+              data-pagination-detail-h-align="right"
+              data-page-list="[10, 20, 30, 40, 50, All]"
+            -->
+            <div class="ms-4 me-4">
+              <table
+              data-toggle="table" 
+              data-pagination="true">            
+              <thead>
+                <tr>
+                  <th rowspan="2" data-checkbox="true" data-valign="middle">                    
+                  </th>
+                  <th colspan="7" data-align="center">Header</th>
+                </tr>
+                <tr>                  
+                  <th data-align="center" data-field="contact" data-sortable="true" data-switchable="false">Contacto</th>
+                  <th data-field="country" data-sortable="true">Pais</th>
+                  <th data-field="company" data-sortable="true">Compañia</th>
+                  <th data-field="job" data-sortable="true">Cargo</th>
+                  <th data-field="media" data-sortable="false">Canal preferido</th>
+                  <th data-field="interest" data-sortable="true">Interes</th>
+                  <th data-field="actions" data-sortable="false">Acciones</th>
+                </tr>
+              </thead>
+                <tbody id="myTable">
+                  
+                </tbody>
+              </table>
+            </div>
+
+
+
+
+  
+<!-- Search form -->
+<script src="table.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
+</body>
+</html>
