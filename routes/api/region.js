@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
-const { User } = require('../../database/database');
+const { Region } = require('../../database/database');
 const { isAdminUser } = require('../api/middlewares');
 const { check, validationResult } = require('express-validator');
 

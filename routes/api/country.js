@@ -1,11 +1,12 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
-const { User } = require('../../database/database');
+const { Country } = require('../../database/database');
 const { isAdminUser } = require('../api/middlewares');
 const { check, validationResult } = require('express-validator');
 
 router.get('/', async (req, res) => {
-    
+    const country = await Country.findAll();
+    res.json(country);
 });
 
 

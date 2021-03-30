@@ -5,9 +5,10 @@ module.exports = (sequelize, DataTypes) => {
            primaryKey: true,
            autoIncrement: true
         },
-        name: DataTypes.STRING         
+        name: DataTypes.STRING,
+        countryId: DataTypes.INTEGER         
     });
-
+/*
     Model.bulkCreate([{
         name: 'Buenos Aires',
         countryId: 1
@@ -83,6 +84,6 @@ module.exports = (sequelize, DataTypes) => {
         
     }
 ]);
-
+*/
     return Model;
 }

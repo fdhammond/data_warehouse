@@ -5,7 +5,8 @@ const { isAdminUser } = require('../api/middlewares');
 const { check, validationResult } = require('express-validator');
 
 router.get('/', async (req, res) => {
-    
+    const city = await City.findAll();
+    res.json(city);
 });
 
 

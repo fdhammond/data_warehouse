@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         name: DataTypes.STRING        
     });
-
+/*
     Model.bulkCreate([{
         name: 'Sudamérica'
         
@@ -17,6 +17,6 @@ module.exports = (sequelize, DataTypes) => {
         
     }    
 ]);
-
+*/
     return Model;
 }
