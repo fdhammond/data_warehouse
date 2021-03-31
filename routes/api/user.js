@@ -10,8 +10,24 @@ const jwt = require('jsonwebtoken');
 router.get('/', async (req, res) => {
     const user = await User.findAll();
     res.json(user);
-})
+});
 
+router.post('/register', [
+    check('password', 'El password es obligatorio, debe tener minimo 8 caracteres').not().isEmpty().isLength({ min: 8 }),
+    check('email', 'El email debe estar correcto').isEmail()
+], async (req, res) => {
+
+    const errors = validationResult(req);
+    
+    if(!errors.isEmpty()) {
+        //Devuelve el error en formato array
+        return res.status(422).json({ errores: errors.array() });
+    }
+
+    req.body.password = bcrypt.hashSync(req.body.password, 10);    
+    const user = await User.create(req.body);
+    res.json(user);
+});
 
 router.post('/login', async (req, res) => {
     const user = await User.findOne({ where: { email: req.body.email} });
@@ -32,10 +48,11 @@ router.post('/login', async (req, res) => {
 
 const createToken = (user) => {
     const payload = {
-        usuarioId: user
+        usuarioId: user.id
     }
 
-    return jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: 1440 });
+    return jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: '365d' });
 }
 
 module.exports = router;
+

@@ -1,15 +1,22 @@
 module.exports = (sequelize, DataTypes) => {
-    return sequelize.define('user', {
+    const Model = sequelize.define('user', {
         id: {
            type: DataTypes.INTEGER,
            primaryKey: true,
            autoIncrement: true
         },
         email: DataTypes.STRING,
-        password: DataTypes.STRING(150),
+        password: DataTypes.STRING(999),
         isAdmin: {
             type: DataTypes.ENUM('admin', 'user'),
             defaultValue: 'user'
         }
     });
+/*
+    Model.bulkCreate([{
+        email: 'acamica@gmail.com',
+        password: '12345678'
+    }]);
+*/
+    return Model;
 }
