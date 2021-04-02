@@ -3,10 +3,10 @@ const express = require('express')
 const app = express();
 const bcrypt = require('bcryptjs');
 const { User } = require('../../database/database');
-const { isAdminUser } = require('../api/middlewares');
+const { isAdminUser, tokenAuth } = require('../api/middlewares');
 const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
-app.use(express.json());
+
 
 
 
@@ -33,20 +33,23 @@ router.post('/register', [
     res.json(user);
 });
 
-router.post('/login', async (req, res) => {
+router.post('/login', tokenAuth, async (req, res) => {
     const user = await User.findOne({ where: { email: req.body.email} });
     if (user) {
         //Comparo password que viene en el body y la encriptada
         const equals = bcrypt.compareSync(req.body.password, user.password)
         if (equals) {
-            //console.log(user.dataValues)
-            res.json({ success: createToken(user) });
+            //console.log(user.dataValues)            
+            // res.json({ 
+            //     success: createToken(user)                 
+            // });
+            createToken(user);
+            res.redirect("http://127.0.0.1:5501/public/contact.html");
+            
         } else {
             res.json({ error: 'Error in user or password' })
         }
-    } else {
-        res.json({ error: 'Error in user or password' })
-    }
+    }   
 });
 
 
@@ -54,7 +57,6 @@ const createToken = (user) => {
     const payload = {
         usuarioId: user.id
     }
-
     return jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: '365d' });
 }
 
