@@ -9,10 +9,6 @@
   color: white;
 }
 
-.login-container {
-  margin-top: 12%;
-}
-
 .nav .nav-item a {
   color: white;
 }
@@ -45,5 +41,9 @@
 
 .table-container {
   margin-top: 155px;
+}
+
+.main-container {
+  margin-top: 15%;
 }
 /*# sourceMappingURL=style.css.map */

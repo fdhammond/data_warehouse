@@ -8,12 +8,9 @@ const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 
 
-
-
-
 router.get('/', async (req, res) => {
-    const user = await User.findAll();
-    res.json(user);
+    //const user = await User.findAll();
+    res.render('main.hbs', { layout: false });
 });
 
 router.post('/register', [
@@ -44,7 +41,7 @@ router.post('/login', tokenAuth, async (req, res) => {
             //     success: createToken(user)                 
             // });
             createToken(user);
-            res.redirect("http://127.0.0.1:5501/public/contact.html");
+            res.render("views/layouts/main.hbs");
             
         } else {
             res.json({ error: 'Error in user or password' })
